@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - "1.9.2"
+  - "1.9.3"
+# uncomment this line if your project needs to run something other than `rake`:
+# script: bundle exec rspec spec
+script:
+  - "se-interpreter interpreter_config.json"
+env:
+  global:
+    - secure: "AlheOk2XydaTcCLfDVzhoSmLdSLK2bRAUq9sQSZZyJU/FT8Tpf/FLgxMSBeU\n0EHUQPIt6rta/oXLr7Rt2HErzXnmSsV8oIVxm0lxexQMn2l3K2PAQXo0oKXR\nES1r5xNUqN2E6zS5teHoN3ibOSCmVyYGEhZr9i/tPeRkjWeTy+4="
+    - secure: "g/2EvlTwuhFhYpDYKuP4YcSo2bIdF4FTrUEdxgpwEIFbQzCvCmPtgamLBdKA\nDLnMWaUJc8879pUMC7xsBc5maSeLd0oe3uNuIMYlyeGbJwyP9P8fBz5CwA/g\nyG4VF2rMhuQXkPuyQpPXa1SdguIGqNH9bOMm/sNJLiHIv2fMy6w="
+before_script:
+  - "npm install -g se-interpreter"
+  - rake db:migrate
